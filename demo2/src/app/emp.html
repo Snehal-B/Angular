@@ -1,0 +1,24 @@
+EmpNo  : <input type="number" [(ngModel)] ="e.empno" /><br/>
+Ename :  <input type="text"  [(ngModel)] ="e.ename" /><br/>
+Salary : <input type="number"  [(ngModel)] ="e.salary" /><br/>
+
+<input type="button" (click)="add()" value="Add "  [disabled]="editflagcheck()"   />
+<input type="button" (click)="save()" value="Save " [disabled]="!editflagcheck()"   />
+<input type="button" (click)="revert()" value="Discard " [disabled]="!editflagcheck()"   />
+<table bgcolor ="cyan" border="1" *ngIf="emparr.length">
+  <thead >
+    <th>EmpNo</th>
+    <th>Ename</th>
+    <th>Salary</th>
+    <th>Remove</th>
+    <th>Edit Record</th>
+  </thead>
+  <tr  *ngFor="let emp of emparr;index as i" >
+      <td>{{emp.empno}}</td>
+      <td>{{emp.ename|uppercase}}</td>
+      <td>{{emp.salary|currency:'INR':true:'1.0-3'}}</td>
+      <td><input type="button" value="remove{{i}}" (click)="remove(i)" /></td>
+      <td><input type="button" value="Edit {{i}}" (click)="edit(i)" /></td>
+  </tr>
+</table>
+  

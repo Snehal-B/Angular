@@ -1,0 +1,13 @@
+App2.html
+<h1>Generic Request for HTTP </h1>
+Url : <input type="text" [(ngModel)]="url" /><br/>
+Input Object : <input type="text" [(ngModel)]="myinput" /><br/>
+Method : <input type="text" [(ngModel)]="method" /><br/>
+
+
+<input type="button" value="Invoke" (click)="m1()" />
+{{url}}, 
+{{myinput}} ,
+{{method}},
+<h1>Output = {{myobj|json}}</h1>
+<hr/>

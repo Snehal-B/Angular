@@ -1,0 +1,29 @@
+
+<input type="button" value="Test post method" (click)="posttest()" />
+{{retdata|json}}
+<hr/>
+<input type="button" value="Test put method" (click)="puttest()" />
+{{retdata|json}}
+<hr/>
+
+<input type="button" value="Page 1" (click)="m1(1)" />
+<input type="button" value="Page 2" (click)="m1(2)" />
+<input type="button" value="Page 3" (click)="m1(3)" />
+<input type="button" value="Page 4" (click)="m1(4)" /><br/>
+{{myobj|json}}
+<table bgcolor ="cyan" border="1" *ngIf="myobj">
+  <thead >
+    <th>Id</th>
+    <th>FirstName</th>
+    <th>LastNAme</th>
+    <th>Avatar</th>
+    
+  </thead>
+  <tr  *ngFor="let usr of myobj" >
+      <td>{{usr.id}}</td>
+      <td>{{usr.first_name}}</td>
+      <td>{{usr.last_name}}</td>
+      <td><img [src]="usr.avatar" /></td>
+      
+  </tr>
+</table>
